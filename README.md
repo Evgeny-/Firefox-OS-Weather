@@ -1,1 +1,1 @@
-bla bla bla
+https://marketplace.firefox.com/app/weather-app/

@@ -261,10 +261,10 @@ var Weather = (function(){
          return _show(_cache.load())
       }
       ajax.jsonp('http://free.worldweatheronline.com/feed/weather.ashx', {
-            q          : config.q,
-            key       : config.key,
+            q           : config.q,
+            key         : config.key,
             num_of_days : config.num_of_days,
-            format       : config.format
+            format      : config.format
          }, 
          _handle
       );

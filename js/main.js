@@ -149,7 +149,7 @@ var Config = (function(){
    function Config() {
       var config = Store.get('settings', true) || {};
       this.q           = config.q           || 'london';
-      this.key         = config.key         || 'fc5cc026a1105351130703';
+      this.key         = config.key         || 'xqxeawkvwdcbrqr7qxtdhxp2';
       this.num_of_days = config.num_of_days ||  5;
       this.format      = config.format      || 'json';
       this.temp        = config.temp        || 'C';
@@ -260,7 +260,7 @@ var Weather = (function(){
       if(_cache.isset() && ! cache) {
          return _show(_cache.load())
       }
-      ajax.jsonp('http://free.worldweatheronline.com/feed/weather.ashx', {
+      ajax.jsonp('http://api.worldweatheronline.com/free/v1/weather.ashx', {
             q           : config.q,
             key         : config.key,
             num_of_days : config.num_of_days,
@@ -271,7 +271,7 @@ var Weather = (function(){
    }
    Weather.prototype.check = function(data, callback) {
       var config = new Config();
-      ajax.jsonp('http://free.worldweatheronline.com/feed/weather.ashx', {
+      ajax.jsonp('http://api.worldweatheronline.com/free/v1/weather.ashx', {
             q           : data.q,
             key         : data.key          || config.key,
             num_of_days : data.num_of_days  || config.num_of_days,

@@ -17,7 +17,7 @@ body {
    font-family: "MozTT", Sans-serif;
    font-weight: lighter;
    color: #aaa;
-   margin: 12pt 0 7pt;
+   margin: 8pt 0;
    text-align: center;
 }
 
@@ -37,6 +37,7 @@ body {
    height: 36pt;
    background: rgba(10,10,15,1);
    font-size: 0px;
+   z-index: 10;
    //text-align: right;
 
    a {
@@ -63,6 +64,21 @@ body {
    color: #eee;
    height: 100%;
    text-align: center;
+
+   & > div {
+      margin-bottom: 22pt;
+
+      &#by {
+         font-size: 10pt;
+         border-bottom: 0px;
+         color: #777;
+
+         a {
+            color: #999;
+            text-decoration: none;
+         }
+      }
+   }
 }
 
 .btn {
@@ -72,7 +88,8 @@ body {
    display: inline-block;
    vertical-align: middle;
    overflow: hidden;
-   background: #fafafa url(../images/recommend.png) repeat-x left bottom / auto 100%;
+   background: url("../images/recommend.png") repeat-x scroll left bottom;
+   background-size: 5px 100%;
    background-color: #fafafa;
    border: 1pt solid #000;
    font: 500 14pt/30pt 'MozTT', Sans-serif;

@@ -14,7 +14,9 @@ App.service 'Storage', [class
 App.service 'City', ['Storage', class
   constructor: (Storage) ->
     @cities = Storage.get('cities') or []
-    @save = -> Storage.set 'cities', @cities
+    @save = -> Storage.set 'cities', @cities.map (city) ->
+      delete city['$$hashKey']
+      city
 
   get: (name) ->
     result = null

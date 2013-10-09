@@ -1,74 +1,103 @@
-<html>
+<!doctype html>
+<html lang="en-US" ng-app="App">
 <head>
-   <title>weather</title>
-   <meta charset="utf-8">
-   <link rel="stylesheet" type="text/css" href="css/main.css">   
-   <meta name="viewport" content="width=320" />
-   <meta name="viewport" content="width=320,user-scalable=no" /> 
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/fontello.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 </head>
 
-<body>
+<body ng-controller="MainController" ng-class="{'opened-options': openedOptions}" ontouchstart="" ng-cloak>
 
-   <section id="choose" style="display:none">
-      <h2 class="bb-docs">Your location</h2>
-      <div class="inner">
-         <button class="btn" id="b-geolocation">Use geolocation</button>
-         <p>
-            <input type="text" id="city" placeholder="Or type city name" class="inp">
-            <button id="b-cityname" class="btn">Go</button>
-         </p>
-         <div style="clear:both"></div>
-      </div>
-      <h2 class="bb-docs">Settings</h2>
-      <div class="inner">
-         <select id="temptype">
-            <option value="C" selected>&deg;C</option>
-            <option value="F">&deg;F</option>
-         </select>
-      </div>
-   </section>
+<div id="header">
+    <a ng-click="toggleOptions()">
+        <i class="icon-menu"></i>
+    </a>
 
-   <div id="weather"></div>
+    <a ng-click="update()">
+        <i class="icon-ccw"></i>
+    </a>
+</div>
 
-   <div id="toolbar">
-      <div id="settings"></div>
-      <div id="reload"></div>
-   </div>
+<div id="options" ng-controller="OptionsController" ng-show="openedOptions" ng-cloak>
+    <div id="cities-wrap">
+        <div class="title">Your cities</div>
+        <div ng-show="!cities.length">
+            You did`nt add any city yet.
+        </div>
+        <div ng-repeat="city in cities" class="city" ng-click="openCity(city.name)">
+            <span class="name">{{ city.name }}</span>
+            <span class="remove" ng-click="removeCity(city.name)">
+                <i class="icon-cancel"></i>
+            </span>
+        </div>
+    </div>
 
-   <script type="text/template" id="tpl_weather">
-      <div class="header">
-         <table class="weather-head">
+    <div id="add-city-wrap">
+        <div class="title">Add new city</div>
+
+        <div class="msg" ng-show="loading">Loading...</div>
+
+        <div class="msg" ng-show="error" ng-bind="error"></div>
+
+        <div class="type-city">
+            <input class="inp" type="text" placeholder="Type city name" ng-model="cityName">
+            <button ng-click="loadCity()" class="btn">Go</button>
+            <div class="clear"></div>
+        </div>
+
+        <div>
+            <button class="btn" ng-click="useGeoLocation()">Use geolocation</button>
+        </div>
+    </div>
+
+    <div id="config-wrap" ng-cloak>
+        <div class="title">Options</div>
+        <select ng-model="options.temp" ng-change="saveOptions()">
+            <option value="C">C&deg;</option>
+            <option value="F">F&deg;</option>
+        </select>
+    </div>
+
+</div>
+
+<div id="weather" ng-controller="WeatherController" ng-show="!openedOptions">
+    <div class="loading" ng-show="!now && !days && loading">
+        Loading...
+    </div>
+
+    <div class="loading" ng-show="!now && !days && !loading">
+        Choose city in <i class="icon-menu"></i>Options to start!
+    </div>
+
+    <div class="header" ng-show="now">
+        <table class="weather-head">
             <tr>
-               <td class="title">
-                  {{=it.now.city}}
-               </td>
-               <td class="img">
-                  <img src="icons/{{=it.now.icon}}.png">
-               </td>
-               <td class="temp">
-                  {{=it.now.temp}}&deg;
-               </td>
-            </tr>   
-         </table>
-      </div>
-      <ul class="list-weather">
-      {{~it.days :day:key}}
-         <li onclick='Action.showDay({{=JSON.stringify(day)}})'>
+                <td class="name">{{ city }}</td>
+                <td class="img"><img src="icons/{{ now.icon }}.png"></td>
+                <td class="temp">{{ now.temp }}&deg;</td>
+            </tr>
+        </table>
+    </div>
+
+    <ul class="list-weather" ng-show="days">
+        <li ng-repeat="day in days" ng-click="showDay(day)">
             <div class="icon">
-               <img alt="placeholder" src="icons/{{=day.icon}}.png"> 
-            </div> 
-            <div class="info">
-               <h4>{{= day.day }}</h4>
-               <span class="temp"><b>{{=day.max}}&deg;</b> {{=day.min}}&deg;</span>
+                <img alt="placeholder" src="icons/{{ day.icon }}.png">
             </div>
-         </li>
-      {{~}}
-      </ul>
-   </script>
+            <div class="info">
+                <h4>{{ day.day }}</h4>
+                <span class="temp">{{ day.max }}&deg; {{ day.min }}&deg;</span>
+            </div>
+        </li>
+    </ul>
+</div>
 
-   <script type="text/javascript" src="js/doT.js"></script>
-   <script type="text/javascript" src="js/main.js"></script>
 
+<script type="text/javascript" src="js/angular.js"></script>
+<script type="text/javascript" src="js/angular-resource.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/service.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
 </body>
-
 </html>

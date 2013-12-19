@@ -160,8 +160,16 @@ select {
   padding: 0 0 10pt;
   text-align: center;
 }
+#weather .border {
+  height: 5px;
+  background: url(../images/border.png);
+  margin: 6pt -10pt;
+}
+#weather .header {
+  margin-bottom: 10pt;
+}
 #weather .header td {
-  vertical-align: top;
+  vertical-align: middle;
 }
 #weather .header .info {
   font-size: 9pt;
@@ -184,7 +192,7 @@ select {
 }
 #weather .header .icon i {
   font-size: 40pt;
-  line-height: 1em;
+  line-height: 40pt;
 }
 #weather .header .temp {
   text-align: right;
@@ -195,12 +203,12 @@ select {
 #weather .weather-head {
   font-size: 12pt;
   width: 100%;
-  margin: 15pt 0 15pt;
   border-collapse: collapse;
 }
 #weather .city-name {
   text-align: center;
   font-weight: bold;
+  font-size: 14pt;
 }
 .weather-table {
   width: 100%;

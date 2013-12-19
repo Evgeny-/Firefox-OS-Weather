@@ -188,10 +188,18 @@ select {
 }
 
 #weather {
+
+   .border {
+      height: 5px;
+      background: url(../images/border.png);
+      margin: 6pt -10pt;
+   }
+
    .header {
+      margin-bottom: 10pt;
 
       td {
-         vertical-align: top;
+         vertical-align: middle;
       }
 
       .info {
@@ -218,7 +226,7 @@ select {
 
          i {
             font-size: 40pt;
-            line-height: 1em;
+            line-height: 40pt;
          }
       }
       .temp {
@@ -232,13 +240,14 @@ select {
    .weather-head {
       font-size: 12pt;
       width: 100%;
-      margin: 15pt 0 15pt;
+      //margin: 10pt 0 10pt;
       border-collapse: collapse;
    }
 
    .city-name {
       text-align: center;
       font-weight: bold;
+      font-size: 14pt;
    }
 }
 

@@ -9,7 +9,7 @@ body {
    margin: 0;
    padding: 0;
    font-size: 12pt;
-   background: #EAEEEE;
+   background: #F2EDD3;
    font-family: @family;
 
    &.opened-options {
@@ -61,7 +61,7 @@ body {
 }
 
 #options, #weather {
-   margin-bottom: 46pt;
+   margin-bottom: 40pt;
    padding: 5pt 10pt 0;
 }
 
@@ -221,18 +221,18 @@ select {
       }
 
       .icon {
-         width: 50pt;
-         text-align: right;
+         width: 40pt;
+         text-align: center;
 
-         i {
-            font-size: 40pt;
+         i:before {
+            font-size: 45pt;
             line-height: 40pt;
          }
       }
       .temp {
          text-align: right;
          font-size: 30pt;
-         width: 65t;
+         width: 65pt;
          line-height: 1em;
       }
    }
@@ -258,7 +258,7 @@ select {
    border-collapse: collapse;
 
    tr {
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid rgba(3, 3, 3, 0.17);
 
       &:last-of-type {
          border-bottom: 0px;
@@ -288,15 +288,17 @@ select {
    }
 
    .icon {
-      width: 38pt;
+      width: 35pt;
+      vertical-align: middle;
+      padding: 3pt 3pt 0;
 
-      i {
+      i:before {
          display: inline-block;
          font-size: 35pt;
-         line-height: 30pt;
+         line-height: 35pt;
          font-weight: 100;
          color: #222222;
-         //vertical-align: middle;
+         vertical-align: middle;
       }
    }
 }

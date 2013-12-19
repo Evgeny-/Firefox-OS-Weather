@@ -5,7 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.less" afterPath="$PROJECT_DIR$/css/main.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manifest.webapp" afterPath="$PROJECT_DIR$/manifest.webapp" />
     </list>
     <list id="59a432de-edd8-4f8a-a903-dee2b1be83e7" name="Rejected commit: Default" comment="add fonts and fix bugs" />
     <ignored path="Firefox-OS-Weather.iws" />
@@ -31,10 +31,22 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="103" column="32" selection-start="3595" selection-end="3595" vertical-scroll-proportion="0.77351916" vertical-offset="1188" max-vertical-offset="2394">
+                <state line="16" column="29" selection-start="727" selection-end="727" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="2394">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="manifest.webapp" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/mobile/manifest.webapp">
+              <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+                <state />
+              </provider>
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="17" selection-start="125" selection-end="125" vertical-scroll-proportion="0.082474224" vertical-offset="0" max-vertical-offset="873">
                   <folding />
                 </state>
               </provider>
@@ -43,33 +55,33 @@
           <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/main.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="138" column="30" selection-start="2433" selection-end="2433" vertical-scroll-proportion="41.185184" vertical-offset="3596" max-vertical-offset="5526">
+                <state line="138" column="30" selection-start="2433" selection-end="2433" vertical-scroll-proportion="41.185184" vertical-offset="3596" max-vertical-offset="5562">
                   <folding>
-                    <marker date="1387456634982" expanded="true" signature="56:78" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="288:418" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="1314:1787" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="1909:2231" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="2240:2497" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3104:4166" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3226:3939" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3265:3307" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3321:3652" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3362:3400" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3413:3644" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3666:3810" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3730:3802" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3823:3934" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="3958:4068" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4084:4164" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4183:5018" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4275:4452" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4336:4374" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4391:4447" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4462:4716" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4480:4587" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4607:4711" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4799:5016" placeholder="{...}" />
-                    <marker date="1387456634982" expanded="true" signature="4829:5011" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="56:78" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="288:418" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="1314:1787" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="1909:2231" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="2240:2497" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3104:4175" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3226:3948" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3265:3307" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3321:3652" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3362:3400" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3413:3644" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3666:3818" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3738:3810" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3831:3943" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="3967:4077" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4093:4173" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4192:5103" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4284:4476" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4360:4398" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4415:4471" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4486:4740" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4504:4611" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4631:4735" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4823:5101" placeholder="{...}" />
+                    <marker date="1387457833035" expanded="true" signature="4916:5096" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -106,10 +118,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main.less" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="main.less" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/css/main.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="195" column="4" selection-start="3213" selection-end="3213" vertical-scroll-proportion="0.13501143" vertical-offset="3392" max-vertical-offset="5526">
+                <state line="72" column="12" selection-start="1089" selection-end="1089" vertical-scroll-proportion="-20.0" vertical-offset="756" max-vertical-offset="5562">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="manifest.webapp" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/manifest.webapp">
+              <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+                <state />
+              </provider>
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="4" column="17" selection-start="125" selection-end="125" vertical-scroll-proportion="0.082474224" vertical-offset="0" max-vertical-offset="873">
                   <folding />
                 </state>
               </provider>
@@ -167,6 +191,8 @@
         <option value="$PROJECT_DIR$/js/controller.coffee" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/main.less" />
+        <option value="$PROJECT_DIR$/manifest.webapp" />
+        <option value="$PROJECT_DIR$/mobile/manifest.webapp" />
       </list>
     </option>
   </component>
@@ -232,6 +258,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webfont" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Firefox-OS-Weather" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Firefox-OS-Weather" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mobile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,20 +400,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/controller.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="21" selection-start="3905" selection-end="3905" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/service.coffee">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="502" selection-end="502" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
@@ -459,16 +485,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/main.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="32" selection-start="3595" selection-end="3595" vertical-scroll-proportion="0.77351916" vertical-offset="1188" max-vertical-offset="2394">
+        <state line="138" column="30" selection-start="2433" selection-end="2433" vertical-scroll-proportion="41.185184" vertical-offset="3596" max-vertical-offset="5562">
+          <folding>
+            <marker date="1387457833035" expanded="true" signature="56:78" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="288:418" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="1314:1787" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="1909:2231" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="2240:2497" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3104:4175" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3226:3948" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3265:3307" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3321:3652" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3362:3400" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3413:3644" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3666:3818" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3738:3810" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3831:3943" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="3967:4077" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4093:4173" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4192:5103" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4284:4476" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4360:4398" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4415:4471" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4486:4740" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4504:4611" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4631:4735" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4823:5101" placeholder="{...}" />
+            <marker date="1387457833035" expanded="true" signature="4916:5096" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manifest.webapp">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="125" selection-end="125" vertical-scroll-proportion="0.082474224" vertical-offset="0" max-vertical-offset="873">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.less">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="195" column="4" selection-start="3213" selection-end="3213" vertical-scroll-proportion="0.13501143" vertical-offset="3392" max-vertical-offset="5526">
+        <state line="16" column="29" selection-start="727" selection-end="727" vertical-scroll-proportion="-10.666667" vertical-offset="0" max-vertical-offset="2394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/manifest.webapp">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="125" selection-end="125" vertical-scroll-proportion="0.082474224" vertical-offset="0" max-vertical-offset="873">
           <folding />
         </state>
       </provider>

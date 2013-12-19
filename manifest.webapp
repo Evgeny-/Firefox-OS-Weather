@@ -2,7 +2,7 @@
   "name": "Weather",
   "description": "Simple and powerfull weather app",
   "launch_path": "/index.html",
-  "version": "2.2.0",
+  "version": "2.4.0",
   "icons": {
     "256": "/images/icon.png"
   },

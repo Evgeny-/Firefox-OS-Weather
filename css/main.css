@@ -5,7 +5,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 12pt;
-  background: #EAEEEE;
+  background: #F2EDD3;
   font-family: 'Open Sans', sans-serif;
 }
 body.opened-options {
@@ -50,7 +50,7 @@ body.opened-options {
 }
 #options,
 #weather {
-  margin-bottom: 46pt;
+  margin-bottom: 40pt;
   padding: 5pt 10pt 0;
 }
 #options {
@@ -187,17 +187,17 @@ select {
   text-align: center;
 }
 #weather .header .icon {
-  width: 50pt;
-  text-align: right;
+  width: 40pt;
+  text-align: center;
 }
-#weather .header .icon i {
-  font-size: 40pt;
+#weather .header .icon i:before {
+  font-size: 45pt;
   line-height: 40pt;
 }
 #weather .header .temp {
   text-align: right;
   font-size: 30pt;
-  width: 65t;
+  width: 65pt;
   line-height: 1em;
 }
 #weather .weather-head {
@@ -216,7 +216,7 @@ select {
   border-collapse: collapse;
 }
 .weather-table tr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid rgba(3, 3, 3, 0.17);
 }
 .weather-table tr:last-of-type {
   border-bottom: 0px;
@@ -239,12 +239,15 @@ select {
   font-size: 14pt;
 }
 .weather-table .icon {
-  width: 38pt;
+  width: 35pt;
+  vertical-align: middle;
+  padding: 3pt 3pt 0;
 }
-.weather-table .icon i {
+.weather-table .icon i:before {
   display: inline-block;
   font-size: 35pt;
-  line-height: 30pt;
+  line-height: 35pt;
   font-weight: 100;
   color: #222222;
+  vertical-align: middle;
 }

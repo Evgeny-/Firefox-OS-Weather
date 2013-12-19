@@ -57,8 +57,9 @@ App.service 'Weather', ['Rest', 'City', class
     @City = City
 
   get: (name, callback=angular.noop) ->
+    city = @City.get(name).searchQuery or name
     if @City.needForUpdate name
-      @Rest.getWeather name, (res) =>
+      @Rest.getWeather city, (res) =>
         @City.update name, 'weather', res
         @City.touch name
         callback res
@@ -77,7 +78,7 @@ App.service 'Rest', ['$resource', class
       params: callback: 'JSON_CALLBACK'
 
   defaultQuery =
-    num_of_results: 1
+    num_of_results: 5
     key: 'xqxeawkvwdcbrqr7qxtdhxp2'
     format: 'json'
     num_of_days: 5

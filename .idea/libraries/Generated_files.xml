@@ -2,11 +2,21 @@
   <library name="Generated files" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/mobile/js/app.js" />
         <item url="file://$PROJECT_DIR$/js/controller.js" />
+        <item url="file://$PROJECT_DIR$/mobile/js/service.js" />
+        <item url="file://$PROJECT_DIR$/mobile/js/controller.js" />
+        <item url="file://$PROJECT_DIR$/js/app.js" />
+        <item url="file://$PROJECT_DIR$/js/service.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/js/controller.js" />
+      <root url="file://$PROJECT_DIR$/mobile/js/app.js" />
+      <root url="file://$PROJECT_DIR$/mobile/js/service.js" />
+      <root url="file://$PROJECT_DIR$/js/app.js" />
+      <root url="file://$PROJECT_DIR$/mobile/js/controller.js" />
+      <root url="file://$PROJECT_DIR$/js/service.js" />
     </CLASSES>
     <SOURCES />
   </library>

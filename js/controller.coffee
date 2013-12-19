@@ -64,14 +64,31 @@ App.controller 'OptionsController',
           $scope.loading = no
           return $scope.showError errors[1] unless result['search_api']
           $scope.cityName = null
-          city = resultToCity result['search_api']['result'][0]
-          return $scope.showError errors[2] if City.has city.name
-          City.add city
-          $scope.cities = City.getAll()
+          if result['search_api']['result'].length is 1
+            city = resultToCity result['search_api']['result'][0]
+            return $scope.showError errors[2] if City.has city.name
+            City.add city
+            $scope.cities = City.getAll()
+          else
+            $scope.chooseCity = true;
+            $scope.chooseCities = result['search_api']['result'];
+
+      $scope.chooseCityFunc = (city) ->
+        $scope.chooseCity = false
+        city = resultToCityCoords city
+        return $scope.showError errors[2] if City.has city.name
+        City.add city
+        $scope.cities = City.getAll()
 
       resultToCity = (res) ->
         name: res['areaName'][0]['value']
         searchQuery: res['areaName'][0]['value']
+        lastUpdate: null
+        weather: null
+
+      resultToCityCoords = (res) ->
+        name: res['areaName'][0]['value']
+        searchQuery: res['latitude'] + ',' + res['longitude']
         lastUpdate: null
         weather: null
   ]
@@ -101,14 +118,19 @@ App.controller 'WeatherController',
 
       $rootScope.$on 'update:city', () ->
         if $scope.city
-          City.update $scope.city, 'lastUpdate', null
-          loadWeather $scope.city
+          city = City.get $scope.city
+          if(+new Date - city.lastUpdate > 15 * 60 * 1000)
+            City.update $scope.city, 'lastUpdate', null
+            loadWeather $scope.city
 
 
       parseNow = (now) ->
         temp : [now['temp_C'], now['temp_F']][+(options.temp is 'F')]
         icon : ICONS[now['weatherCode']][0]
         desc : now['weatherDesc'][0]['value']
+        windspeed: now['windspeedKmph']
+        winddir: WINDS[now['winddir16Point']]
+        pressure: now['pressure']
 
       parseDays = (days) ->
         days.map (day) ->

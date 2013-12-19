@@ -1,16 +1,19 @@
+html {
+  font-size: 8pt;
+}
 body {
   margin: 0;
   padding: 0;
   font-size: 12pt;
   background: #EAEEEE;
-  font-family: "MozTT", "Moz", Sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 body.opened-options {
   background: rgba(20, 20, 20, 0.9) url(../images/pattern.png);
 }
 .title {
   font-size: 14pt;
-  font-family: "MozTT", Sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: lighter;
   color: #aaa;
   margin: 8pt 0;
@@ -78,11 +81,12 @@ body.opened-options {
   background-size: 5px 100%;
   background-color: #fafafa;
   border: 1pt solid #000;
-  font: 500 14pt/30pt 'MozTT', Sans-serif;
+  font: 500 14pt/30pt 'Open Sans', sans-serif;
   color: #333;
   text-align: center;
   text-shadow: 1pt 1pt 0 rgba(255, 255, 255, 0.3);
   text-decoration: none;
+  border-radius: 3px;
 }
 .btn:active {
   border-color: #008aaa;
@@ -94,12 +98,13 @@ body.opened-options {
   color: #222;
   -moz-box-sizing: border-box;
   display: block;
+  border-radius: 3px;
   overflow: hidden;
   width: 100%;
   height: 34pt;
   resize: none;
   padding: 0 10pt;
-  font: 14pt/28pt "MozTT", Sans-serif;
+  font: 14pt/28pt 'Open Sans', sans-serif;
   border: 0.1rem solid #000;
   box-shadow: none;
   background: #e4e4e4 url(../images/shadow.png) repeat-x;
@@ -110,8 +115,9 @@ select {
   vertical-align: middle;
   padding: 10pt;
   background: #e4e4e4;
+  border-radius: 3px;
   border: 1pt solid #000;
-  font: 500 14pt/28pt 'MozTT', Sans-serif;
+  font: 500 14pt/28pt 'Open Sans', sans-serif;
   color: #222;
   text-align: center;
   line-height: 30pt;
@@ -154,63 +160,83 @@ select {
   padding: 0 0 10pt;
   text-align: center;
 }
+#weather .header td {
+  vertical-align: top;
+}
+#weather .header .info {
+  font-size: 9pt;
+}
+#weather .header .info div {
+  height: 12pt;
+}
+#weather .header .info i {
+  font-size: 15pt;
+  line-height: 10pt;
+  vertical-align: middle;
+  display: inline-block;
+  width: 15pt;
+  margin-right: 2pt;
+  text-align: center;
+}
+#weather .header .icon {
+  width: 50pt;
+  text-align: right;
+}
+#weather .header .icon i {
+  font-size: 40pt;
+  line-height: 1em;
+}
+#weather .header .temp {
+  text-align: right;
+  font-size: 30pt;
+  width: 65t;
+  line-height: 1em;
+}
 #weather .weather-head {
   font-size: 12pt;
   width: 100%;
-  margin-bottom: 20px;
+  margin: 15pt 0 15pt;
+  border-collapse: collapse;
 }
-#weather .weather-head tr {
-  vertical-align: bottom;
-}
-#weather .weather-head .name {
-  width: 35%;
-}
-#weather .weather-head .img {
-  width: 30%;
+#weather .city-name {
   text-align: center;
+  font-weight: bold;
 }
-#weather .weather-head .img img {
+.weather-table {
   width: 100%;
-  margin: -5px -20px -20px;
+  font-weight: 300;
+  border-collapse: collapse;
 }
-#weather .weather-head .temp {
-  width: 30%;
-  font-size: 34pt;
-  color: #333;
+.weather-table tr {
+  border-bottom: 1px solid #ddd;
+}
+.weather-table tr:last-of-type {
+  border-bottom: 0px;
+}
+.weather-table tr:active {
+  background: rgba(36, 122, 241, 0.7);
+}
+.weather-table .day .day-name {
+  text-transform: uppercase;
+  font-size: 12pt;
+  line-height: 13pt;
+}
+.weather-table .day .day-weather {
+  font-size: 10pt;
+  line-height: 11pt;
+  font-weight: 400;
+}
+.weather-table .temp {
   text-align: right;
+  font-size: 14pt;
 }
-#weather .list-weather {
-  font-size: 9pt;
-  list-style: none;
-  margin: 6pt 0;
-  padding: 0;
+.weather-table .icon {
+  width: 38pt;
 }
-#weather .list-weather li {
-  background: #356E81;
-  margin-top: 1px;
-  padding: 2px 10px 4px;
-  clear: both;
-  color: #fff;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-}
-#weather .list-weather li:after {
-  content: " ";
-  clear: both;
-  display: table;
-}
-#weather .list-weather .icon {
-  float: right;
-}
-#weather .list-weather .icon img {
-  width: 35pt;
-  height: 35pt;
-}
-#weather .list-weather .info {
-  float: left;
-}
-#weather .list-weather h4 {
-  margin: 3pt 0;
-  padding: 0;
-  font-weight: normal;
-  font-size: 13pt;
+.weather-table .icon i {
+  display: inline-block;
+  font-size: 35pt;
+  line-height: 30pt;
+  font-weight: 100;
+  color: #222222;
 }

@@ -1,51 +1,85 @@
 @App = angular.module 'App', ['ngResource']
 
 @ICONS =
-  395: ["weezle_sun_and_snow", "weezle_night_and_snow"]
-  392: ["weezle_sun_thunder_rain", "weezle_night_thunder_rain"]
-  389: ["weezle_cloud_thunder_rain", "weezle_cloud_thunder_rain"]
-  386: ["weezle_sun_thunder_rain", "weezle_night_thunder_rain"]
-  377: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  374: ["weezle_sun_medium_ice", "weezle_night_and_snow"]
-  371: ["weezle_sun_medium_ice", "weezle_night_and_snow"]
-  368: ["weezle_sun_flurrie", "weezle_night_flurry"]
-  365: ["weezle_sun_medium_ice", "weezle_night_and_snow"]
-  362: ["weezle_sun_medium_ice", "weezle_night_and_snow"]
-  359: ["weezle_rain", "weezle_rain"]
-  356: ["weezle_sun_medium_rain", "weezle_night_rain"]
-  353: ["weezle_sun_and_rain", "weezle_night_rain"]
-  350: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  338: ["weezle_snow", "weezle_snow"]
-  335: ["weezle_sun_and_snow", "weezle_night_and_snow"]
-  332: ["weezle_snow", "weezle_snow"]
-  329: ["weezle_snow", "weezle_snow"]
-  326: ["weezle_sun_flurrie", "weezle_night_flurry"]
-  323: ["weezle_sun_flurrie", "weezle_night_flurry"]
-  320: ["weezle_snow", "weezle_snow"]
-  317: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  314: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  311: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  308: ["weezle_rain", "weezle_rain"]
-  305: ["weezle_sun_medium_rain", "weezle_night_rain"]
-  302: ["weezle_rain", "weezle_rain"]
-  299: ["weezle_sun_medium_rain", "weezle_night_rain"]
-  296: ["weezle_rain", "weezle_rain"]
-  293: ["weezle_rain", "weezle_rain"]
-  284: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  281: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  266: ["weezle_rain", "weezle_rain"]
-  263: ["weezle_sun_medium_rain", "weezle_night_rain"]
-  260: ["weezle_fog", "weezle_night_fog"]
-  248: ["weezle_fog", "weezle_night_fog"]
-  230: ["weezle_snow", "weezle_snow"]
-  227: ["weezle_snow", "weezle_snow"]
-  200: ["weezle_sun_thunder_rain", "weezle_night_thunder_rain"]
-  185: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  182: ["weezle_rain_and_snow", "weezle_rain_and_snow"]
-  179: ["weezle_sun_medium_ice", "weezle_night_and_snow"]
-  176: ["weezle_sun_medium_rain", "weezle_night_rain"]
-  143: ["weezle_fog", "weezle_night_fog"]
-  122: ["weezle_max_cloud", "weezle_max_cloud"]
-  119: ["weezle_cloud", "weezle_cloud"]
-  116: ["weezle_sun_minimal_clouds", "weezle_moon_cloud"]
-  113: ["weezle_sun", "weezle_fullmoon"]
+  395: ["snow sun", "snow moon"]
+  392: ["lightning sun", "lightning moon"]
+  389: ["lightning", "lightning"]
+  386: ["snow sun", "snow moon"]
+  377: ["sleet", "sleet"]
+  374: ["showers sun", "showers moon"]
+  371: ["snow sun", "snow moon"]
+  368: ["flurries sun", "flurries moon"]
+  365: ["snow sun", "snow moon"]
+  362: ["snow sun", "snow moon"]
+  359: ["rain", "rain"]
+  356: ["showers sun", "showers moon"]
+  353: ["drizzle sun", "showers moon"]
+  350: ["snow", "snow"]
+  338: ["snow", "snow"]
+  335: ["snow sun", "snow moon"]
+  332: ["snow", "snow"]
+  329: ["snow", "snow"]
+  326: ["cloud sun", "cloud moon"]
+  323: ["cloud sun", "cloud moon"]
+  320: ["snow", "snow"]
+  317: ["snow", "snow"]
+  314: ["snow", "snow"]
+  311: ["snow", "snow"]
+  308: ["rain", "rain"]
+  305: ["showers sun", "showers moon"]
+  302: ["rain", "rain"]
+  299: ["showers sun", "showers moon"]
+  296: ["rain", "rain"]
+  293: ["rain", "rain"]
+  284: ["snow", "snow"]
+  281: ["snow", "snow"]
+  266: ["drizzle", "drizzle"]
+  263: ["showers sun", "showers moon"]
+  260: ["fog", "fog moon"]
+  248: ["fog", "fog moon"]
+  230: ["snow", "snow"]
+  227: ["snow", "snow"]
+  200: ["downpour sun", "downpour moon"]
+  185: ["snow", "snow"]
+  182: ["snow", "snow"]
+  179: ["snow sun", "snow moon"]
+  176: ["showers sun", "showers moon"]
+  143: ["fog", "fog moon"]
+  122: ["cloud", "cloud"]
+  119: ["cloud", "cloud"]
+  116: ["cloud", "cloud"]
+  113: ["sun", "moon"]
+
+@WINDS =
+  N: 'North'
+  NbE: 'North by east'
+  NNE: 'North-northeast'
+  NEbN: 'Northeast by north'
+  NE: 'Northeast'
+  NEbE: 'Northeast by east'
+  ENE: 'East-northeast'
+  EbN: 'East by north'
+  E: 'East'
+  EbS: 'East by south'
+  ESE: 'East-southeast'
+  SEbE: 'Southeast by east'
+  SE: 'Southeast'
+  SEbS: 'Southeast by south'
+  SSE: 'South-southeast'
+  SbE: 'South by east'
+  S: 'South'
+  SbW: 'South by west'
+  SSW: 'South-southwest'
+  SWbS: 'Southwest by south'
+  SW: 'Southwest'
+  SWbW: 'Southwest by west'
+  WSW: 'West-southwest'
+  WbS: 'West by south'
+  W: 'West'
+  WbN: 'West by north'
+  WNW: 'West-northwest'
+  NWbW: 'Northwest by west'
+  NW: 'Northwest'
+  NWbN: 'Northwest by north'
+  NNW: 'North-northwest'
+  NbW: 'North by west'

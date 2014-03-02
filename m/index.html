@@ -2,6 +2,7 @@
 <html lang="en-US" ng-app="App">
 <head>
    <meta charset="UTF-8">
+   <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
    <link rel="stylesheet" href="css/fontello.css"/>
    <link rel="stylesheet" href="webfont/climacons-font.css" />
    <link rel="stylesheet" href="css/action_menu.css" />
@@ -36,7 +37,7 @@
    <div id="cities-wrap">
       <div class="title">Your cities</div>
       <div ng-show="!cities.length">
-         You did'nt add any city yet
+         You did`nt add any city yet.
       </div>
       <div ng-repeat="city in cities" class="city" ng-click="openCity(city.name)">
          <span class="name">{{ city.name }}</span>
@@ -64,13 +65,6 @@
       </div>
    </div>
 
-   <div id="default-wrap">
-      <div class="title">Open on start</div>
-      <select ng-options="v for v in startOptions"
-         ng-model="options.start"
-         ng-change="saveOptions()"></select>
-   </div>
-
    <div id="config-wrap" ng-cloak>
       <div class="title">Options</div>
       <select ng-model="options.temp" ng-change="saveOptions()">
@@ -85,9 +79,11 @@
 </div>
 
 <div id="weather" ng-controller="WeatherController" ng-show="!openedOptions">
-   <div class="progress" ng-show="!now && !days && loading"></div>
+   <div class="loading" ng-show="!now && !days && loading">
+      Loading...
+   </div>
 
-   <div class="loading" ng-show="!now && !days && !loading && !hideChooseText">
+   <div class="loading" ng-show="!now && !days && !loading">
       Choose city in <i class="icon-menu"></i>Options to start!
    </div>
 

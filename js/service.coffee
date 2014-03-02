@@ -100,9 +100,12 @@ App.service 'Rest', ['$resource', class
 
 
 App.service 'Options', ['Storage', class
+  defaultOptions:
+    temp: 'C'
+    start: 'Options menu'
 
   constructor: (Storage) ->
-    @options = Storage.get('options') or temp: 'C'
+    @options = Storage.get('options') or @defaultOptions
     @save = -> Storage.set 'options', @options
 
   get: -> @options

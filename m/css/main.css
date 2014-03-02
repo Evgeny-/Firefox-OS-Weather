@@ -1,21 +1,3 @@
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url(../font/OpenSans-Light.ttf) format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url(../font/OpenSans-Regular.ttf) format('woff');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 600;
-  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../font/OpenSans-Regular.ttf) format('woff');
-}
 html {
   font-size: 8pt;
 }
@@ -70,12 +52,12 @@ body.opened-options {
 #options,
 #weather {
   margin-bottom: 40pt;
+  padding: 5pt 10pt 0;
 }
 #options {
   color: #eee;
   height: 100%;
   text-align: center;
-  padding: 5pt 10pt 0;
 }
 #options > div {
   margin-bottom: 22pt;
@@ -92,9 +74,7 @@ body.opened-options {
 .btn {
   width: 100%;
   height: 34pt;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
@@ -115,9 +95,7 @@ body.opened-options {
 }
 .inp {
   color: #222;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box;
   display: block;
   border-radius: 3px;
   overflow: hidden;
@@ -142,7 +120,6 @@ select {
   color: #222;
   text-align: center;
   line-height: 30pt;
-  overflow: hidden;
 }
 .type-city {
   padding-bottom: 10px;
@@ -185,19 +162,13 @@ select {
 #weather .border {
   height: 5px;
   background: url(../images/border.png);
-  margin: 6pt 0;
-}
-#weather .loading {
-  padding: 5pt 10pt;
+  margin: 6pt -10pt;
 }
 #weather .header {
   margin-bottom: 10pt;
 }
 #weather .header td {
   vertical-align: middle;
-}
-#weather .header .city-name {
-  margin-top: 5pt;
 }
 #weather .header .info {
   font-size: 9pt;
@@ -230,8 +201,7 @@ select {
 }
 #weather .weather-head {
   font-size: 12pt;
-  width: 95%;
-  margin: auto;
+  width: 100%;
   border-collapse: collapse;
 }
 #weather .city-name {
@@ -240,8 +210,7 @@ select {
   font-size: 14pt;
 }
 .weather-table {
-  margin: auto;
-  width: 95%;
+  width: 100%;
   font-weight: 300;
   border-collapse: collapse;
 }
@@ -280,25 +249,4 @@ select {
   font-weight: 100;
   color: #222222;
   vertical-align: middle;
-}
-.progress {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  border-radius: 0.3rem;
-  height: 0.3rem;
-  background-color: #f4f4f4;
-  background-image: url(../images/activity.png);
-  background-repeat: repeat;
-  background-size: auto 100%;
-  animation: 0.5s move infinite steps(15);
-}
-@keyframes move {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 1rem 0;
-  }
 }

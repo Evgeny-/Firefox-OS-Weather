@@ -192,13 +192,10 @@
 
   App.service('Options', [
     'Storage', (function() {
-      _Class.prototype.defaultOptions = {
-        temp: 'C',
-        start: 'Options menu'
-      };
-
       function _Class(Storage) {
-        this.options = Storage.get('options') || this.defaultOptions;
+        this.options = Storage.get('options') || {
+          temp: 'C'
+        };
         this.save = function() {
           return Storage.set('options', this.options);
         };

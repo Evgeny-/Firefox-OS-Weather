@@ -1,17 +1,34 @@
-App.controller 'MainController', ['$rootScope', ($rootScope) ->
-  $rootScope.openedOptions = yes
+App.controller 'MainController',
+  ['$rootScope', '$timeout', 'Options', 'City',
+    ($rootScope, $timeout, Options, City) ->
+      $rootScope.openedOptions = yes
 
-  $rootScope.toggleOptions = ->
-    $rootScope.openedOptions = not $rootScope.openedOptions
+      $rootScope.toggleOptions = ->
+        $rootScope.openedOptions = not $rootScope.openedOptions
 
-  $rootScope.update = ->
-    $rootScope.$emit 'update:city', yes
-]
+      $rootScope.update = ->
+        $rootScope.$emit 'update:city', yes
+
+      options = Options.get()
+      cities = City.getAll().map (a) -> a.name
+
+      if options.start isnt Options.defaultOptions.start
+        return if cities.indexOf(options.start) is -1
+        $rootScope.openedOptions = no
+        $rootScope.hideChooseText = yes
+        $timeout (->$rootScope.$emit 'open:city', options.start)
+  ]
 
 
 App.controller 'OptionsController',
   ['$scope', '$rootScope', 'Rest', '$timeout', 'City', 'Options',
     ($scope, $rootScope, Rest, $timeout, City, Options) ->
+      setStartOptions = ->
+        $scope.startOptions = [Options.defaultOptions.start].concat(City.getAll().map (a) -> a.name)
+        if $scope.startOptions.indexOf($scope.options.start) is -1
+          $scope.options.start = Options.defaultOptions.start
+          Options.save()
+
       errors = [
         'Please enter city name'
         'No cities found'
@@ -22,6 +39,8 @@ App.controller 'OptionsController',
       $scope.cityName = null
       $scope.loading = no
       $scope.options = Options.get()
+
+      setStartOptions()
 
       $scope.showError = (error) ->
         $scope.error = error
@@ -39,7 +58,7 @@ App.controller 'OptionsController',
                 searchQuery: name
                 lastUpdate: null
                 weather: null
-
+              setStartOptions()
             else
               $scope.showError errors[1]
 
@@ -50,11 +69,13 @@ App.controller 'OptionsController',
 
       $scope.openCity = (city) ->
         $rootScope.$emit 'open:city', city if City.has(city)
+        $rootScope.openedOptions = false
 
       $scope.removeCity = (name) ->
         if confirm "Are you sure want to delete #{name}?"
           City.remove name
           $scope.cities = City.getAll()
+          setStartOptions()
 
       $scope.loadCity = ->
         return $scope.showError errors[0] unless $scope.cityName
@@ -69,6 +90,7 @@ App.controller 'OptionsController',
             return $scope.showError errors[2] if City.has city.name
             City.add city
             $scope.cities = City.getAll()
+            setStartOptions()
           else
             $scope.chooseCity = true;
             $scope.chooseCities = result['search_api']['result'];
@@ -79,6 +101,7 @@ App.controller 'OptionsController',
         return $scope.showError errors[2] if City.has city.name
         City.add city
         $scope.cities = City.getAll()
+        setStartOptions()
 
       resultToCity = (res) ->
         name: res['areaName'][0]['value']
@@ -114,7 +137,6 @@ App.controller 'WeatherController',
       $rootScope.$on 'open:city', (e, city) ->
         loadWeather city
         $scope.city = city
-        $rootScope.toggleOptions()
 
       $rootScope.$on 'update:city', () ->
         if $scope.city

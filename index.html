@@ -6,6 +6,7 @@
    <link rel="stylesheet" href="webfont/climacons-font.css" />
    <link rel="stylesheet" href="css/action_menu.css" />
    <link rel="stylesheet" href="css/main.css"/>
+   <link rel="prefetch" type="application/l10n" href="l10n/main.ini"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 </head>
 
@@ -24,18 +25,18 @@
 <div id="options" ng-controller="OptionsController" ng-show="openedOptions" ng-cloak>
 
    <form role="dialog" data-type="action" ng-show="chooseCity">
-      <header>Choose city</header>
+      <header data-l10n-id="Choose_city">Choose city</header>
       <menu>
          <button ng-repeat="city in chooseCities" ng-click="chooseCityFunc(city)">
             {{city.areaName[0].value}} ({{city.country[0].value}})
          </button>
-         <button ng-click="chooseCity=0">Cancel</button>
+         <button data-l10n-id="Cancel" ng-click="chooseCity=0">Cancel</button>
       </menu>
    </form>
 
    <div id="cities-wrap">
-      <div class="title">Your cities</div>
-      <div ng-show="!cities.length">
+      <div data-l10n-id="Your_cities" class="title">Your cities</div>
+      <div data-l10n-id="You_have_not" ng-show="!cities.length">
          You haven't added any cities yet.
       </div>
       <div ng-repeat="city in cities" class="city" ng-click="openCity(city.name)">
@@ -47,7 +48,7 @@
    </div>
 
    <div id="add-city-wrap">
-      <div class="title">Add new city</div>
+      <div data-l10n-id="Add_new_city" class="title">Add new city</div>
 
       <div class="msg" ng-show="loading">Loading...</div>
 
@@ -128,5 +129,6 @@
 <script type="text/javascript" src="js/app.js"></script>
 <script type="text/javascript" src="js/service.js"></script>
 <script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src='js/l10n.js'></script>
 </body>
 </html>

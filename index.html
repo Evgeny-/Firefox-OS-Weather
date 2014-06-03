@@ -50,30 +50,30 @@
    <div id="add-city-wrap">
       <div data-l10n-id="Add_new_city" class="title">Add new city</div>
 
-      <div class="msg" ng-show="loading">Loading...</div>
+      <div data-l10n-id="Loading" class="msg" ng-show="loading">Loading...</div>
 
       <div class="msg" ng-show="error" ng-bind="error"></div>
 
       <div class="type-city">
          <input class="inp" type="text" placeholder="Type city name" ng-model="cityName">
-         <button ng-click="loadCity()" class="btn">Go</button>
+         <button data-l10n-id="Go" ng-click="loadCity()" class="btn">Go</button>
          <div class="clear"></div>
       </div>
 
       <div>
-         <button class="btn" ng-click="useGeoLocation()">Use geolocation</button>
+         <button data-l10n-id="Use_geolocation" class="btn" ng-click="useGeoLocation()">Use geolocation</button>
       </div>
    </div>
 
    <div id="default-wrap">
-      <div class="title">Open on start</div>
+      <div data-l10n-id="Open_on_start" class="title">Open on start</div>
       <select ng-options="v for v in startOptions"
          ng-model="options.start"
          ng-change="saveOptions()"></select>
    </div>
 
    <div id="config-wrap" ng-cloak>
-      <div class="title">Options</div>
+      <div data-l10n-id="Options" class="title">Options</div>
       <select ng-model="options.temp" ng-change="saveOptions()">
          <option value="C">C&deg;</option>
          <option value="F">F&deg;</option>
@@ -81,7 +81,7 @@
    </div>
 
    <div id="by">
-      by <a href="https://github.com/Evgeny-" target="_blank">Evgeny Nikiforov <i class="icon-github"></i></a>
+      <a data-l10n-id="By"> by</a> <a href="https://github.com/Evgeny-" target="_blank">Evgeny Nikiforov <i class="icon-github"></i></a>
    </div>
 </div>
 

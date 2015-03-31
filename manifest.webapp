@@ -1,6 +1,6 @@
 {
   "name": "Weather",
-  "description": "Simple and powerfull weather app",
+  "description": "Simple and powerful weather app",
   "launch_path": "/index.html",
   "version": "2.4.1",
   "icons": {
@@ -15,5 +15,25 @@
     "geolocation": {
       "description": "Required for choosing your location"
       }
+  },
+  "locales": {
+    "eo": {
+      "name": "Klimato",
+      "description": "Simpla kaj efika aplikaĵo por la klimato.",
+      "permissions": {
+        "geolocation": {
+          "description": "Necesata por difini vian lokalizon"
+        }
+      }
+    },
+    "it": {
+      "name": "Meteo",
+      "description": "App semplice e potente per il meteo.",
+      "permissions": {
+        "geolocation": {
+          "description": "Necessario per determinare la tua localizzazione"
+        }
+      }
+    }
   }
 }

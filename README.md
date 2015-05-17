@@ -5,7 +5,7 @@ Link for FF Marketplace - https://marketplace.firefox.com/app/weather-app/
 
 `grunt` or `grunt build` for release
 
-##How I can help?
+###How I can help?
 If you want helps with translations, you can edit `scripts/dictionary.coffee` for your language.
 
 

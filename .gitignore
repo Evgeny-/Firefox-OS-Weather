@@ -2,4 +2,5 @@
 build
 node_modules
 npm-debug.log
-.idea
+.idea/*
+manifest.webapp~

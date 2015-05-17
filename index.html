@@ -1,11 +1,8 @@
 <!doctype html>
-<html lang="en-US" ng-app="App">
+<html lang="en-US" ng-app="Weather">
 <head>
    <meta charset="UTF-8">
-   <link rel="stylesheet" href="css/fontello.css"/>
-   <link rel="stylesheet" href="webfont/climacons-font.css" />
-   <link rel="stylesheet" href="css/action_menu.css" />
-   <link rel="stylesheet" href="css/main.css"/>
+   <link rel="stylesheet" href="build/build.css"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 </head>
 
@@ -24,20 +21,18 @@
 <div id="options" ng-controller="OptionsController" ng-show="openedOptions" ng-cloak>
 
    <form role="dialog" data-type="action" ng-show="chooseCity">
-      <header>Choose city</header>
+      <header ng-bind="m.options.choose_city"></header>
       <menu>
          <button ng-repeat="city in chooseCities" ng-click="chooseCityFunc(city)">
-            {{city.areaName[0].value}} ({{city.country[0].value}})
+            {{ city.areaName[0].value }} ({{ city.region[0].value }}, {{ city.country[0].value }})
          </button>
-         <button ng-click="chooseCity=0">Cancel</button>
+         <button ng-click="chooseCity=0" ng-bind="m.options.cancel"></button>
       </menu>
    </form>
 
    <div id="cities-wrap">
-      <div class="title">Your cities</div>
-      <div ng-show="!cities.length">
-         You haven't added any cities yet.
-      </div>
+      <div class="title" ng-bind="m.options.your_cities"></div>
+      <div ng-show="!cities.length" ng-bind="m.options.no_cities"></div>
       <div ng-repeat="city in cities" class="city" ng-click="openCity(city.name)">
          <span class="name">{{ city.name }}</span>
             <span class="remove" ng-click="removeCity(city.name)">
@@ -47,32 +42,30 @@
    </div>
 
    <div id="add-city-wrap">
-      <div class="title">Add new city</div>
-
-      <div class="msg" ng-show="loading">Loading...</div>
-
+      <div class="title" ng-bind="m.options.add_new_city"></div>
+      <div class="msg" ng-show="loading" ng-bind="m.options.loading"></div>
       <div class="msg" ng-show="error" ng-bind="error"></div>
 
       <div class="type-city">
-         <input class="inp" type="text" placeholder="Type city name" ng-model="cityName">
-         <button ng-click="loadCity()" class="btn">Go</button>
+         <input class="inp" type="text" placeholder="{{ m.options.search_placeholder }}" ng-model="cityName">
+         <button ng-click="loadCity()" class="btn" ng-bind="m.options.go"></button>
          <div class="clear"></div>
       </div>
 
       <div>
-         <button class="btn" ng-click="useGeoLocation()">Use geolocation</button>
+         <button class="btn" ng-click="useGeoLocation()" ng-bind="m.options.use_geolocation"></button>
       </div>
    </div>
 
    <div id="default-wrap">
-      <div class="title">Open on start</div>
+      <div class="title" ng-bind="m.options.open_on_start"></div>
       <select ng-options="v for v in startOptions"
          ng-model="options.start"
          ng-change="saveOptions()"></select>
    </div>
 
    <div id="config-wrap" ng-cloak>
-      <div class="title">Options</div>
+      <div class="title" ng-bind="m.options.other_options"></div>
       <select ng-model="options.temp" ng-change="saveOptions()">
          <option value="C">C&deg;</option>
          <option value="F">F&deg;</option>
@@ -80,16 +73,14 @@
    </div>
 
    <div id="by">
-      by <a href="https://github.com/Evgeny-" target="_blank">Evgeny Nikiforov <i class="icon-github"></i></a>
+      {{ m.options.by_label }} <a href="https://github.com/Evgeny-" target="_blank">Evgeny Nikiforov <i class="icon-github"></i></a>
    </div>
 </div>
 
 <div id="weather" ng-controller="WeatherController" ng-show="!openedOptions">
    <div class="progress" ng-show="!now && !days && loading"></div>
 
-   <div class="loading" ng-show="!now && !days && !loading && !hideChooseText">
-      Choose city in <i class="icon-menu"></i>Options to start!
-   </div>
+   <div class="loading" ng-show="!now && !days && !loading && !hideChooseText" ng-bind="m.weather.no_city"></div>
 
    <div class="header" ng-show="now">
       <div class="city-name" ng-bind="city"></div>
@@ -97,9 +88,9 @@
       <table class="weather-head">
          <tr>
             <td class="info">
-               <div><i class="climacon umbrella"></i> {{now.desc}}</div>
-               <div><i class="climacon wind"></i> {{now.windspeed}} km/h</div>
-               <div><i class="climacon compass"></i> {{now.winddir}}</div>
+               <div><i class="climacon umbrella"></i> {{ now.desc }}</div>
+               <div><i class="climacon wind"></i> {{ now.windspeed }} {{ m.weather.kmh }}</div>
+               <div><i class="climacon compass"></i> {{ m.winds[now.winddir] || now.winddir }}</div>
             </td>
             <td class="icon"><i class="climacon" ng-class="now.icon"></i></td>
             <td class="temp">{{ now.temp }}&deg;</td>
@@ -122,11 +113,6 @@
    </table>
 </div>
 
-
-<script type="text/javascript" src="js/angular.js"></script>
-<script type="text/javascript" src="js/angular-resource.js"></script>
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/service.js"></script>
-<script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src="build/build.js"></script>
 </body>
 </html>

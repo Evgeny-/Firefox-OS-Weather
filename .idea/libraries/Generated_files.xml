@@ -11,12 +11,12 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/js/controller.js" />
+      <root url="file://$PROJECT_DIR$/scripts/controller.js" />
       <root url="file://$PROJECT_DIR$/mobile/js/app.js" />
       <root url="file://$PROJECT_DIR$/mobile/js/service.js" />
-      <root url="file://$PROJECT_DIR$/js/app.js" />
+      <root url="file://$PROJECT_DIR$/scripts/app.js" />
       <root url="file://$PROJECT_DIR$/mobile/js/controller.js" />
-      <root url="file://$PROJECT_DIR$/js/service.js" />
+      <root url="file://$PROJECT_DIR$/scripts/service.js" />
     </CLASSES>
     <SOURCES />
   </library>

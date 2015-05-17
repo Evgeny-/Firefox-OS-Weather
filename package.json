@@ -1,0 +1,14 @@
+{
+   "name": "firefoxos-weather",
+   "devDependencies": {
+      "grunt": "~0.4.1",
+      "grunt-rev": "~0.1.0",
+      "grunt-contrib-clean": "~0.4.0",
+      "grunt-contrib-concat": "~0.3.0",
+      "grunt-contrib-watch": "*",
+      "grunt-contrib-uglify": "*",
+      "assemble-less": "*",
+      "grunt-angular-templates": "*",
+      "grunt-contrib-coffee": "0.7.0"
+   }
+}

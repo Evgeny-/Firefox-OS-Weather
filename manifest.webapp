@@ -34,6 +34,15 @@
           "description": "Necessario per determinare la tua localizzazione"
         }
       }
+    },
+    "eo": {
+      "name": "Погода",
+      "description": "Простое и функциональное приложение прогноза погоды",
+      "permissions": {
+        "geolocation": {
+          "description": "Требуется, чтобы находить ваше месторасположение для показа погоды"
+        }
+      }
     }
   }
 }

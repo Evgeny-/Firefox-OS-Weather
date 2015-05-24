@@ -54,7 +54,7 @@ App.controller 'OptionsController',
         $rootScope.openedOptions = false
 
       $scope.removeCity = (name) ->
-        if confirm App.alerts.confirm_delete
+        if confirm App.m.alerts.confirm_delete
           City.remove name
           $scope.cities = City.getAll()
           setStartOptions()

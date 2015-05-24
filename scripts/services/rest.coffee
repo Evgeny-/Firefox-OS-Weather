@@ -25,5 +25,6 @@ App.service 'Rest', ['$resource', class
     @rest.city.get {q: city}, callback
 
   getWeather: (cityName, callback=angular.noop) ->
+    console.log cityName
     @rest.weather.get {q: cityName}, callback
 ]

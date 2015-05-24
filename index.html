@@ -8,7 +8,7 @@
 
 <body ng-controller="MainController" ng-class="{'opened-options': openedOptions}" ontouchstart="" ng-cloak>
 
-<div id="header">
+<div id="header" ng-show="!openedOptions">
    <a ng-click="toggleOptions()">
       <i class="icon-menu"></i>
    </a>

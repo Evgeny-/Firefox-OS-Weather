@@ -30,13 +30,12 @@ App.controller 'WeatherController',
       parseNow = (now) ->
         temp : [now['temp_C'], now['temp_F']][+(options.temp is 'F')]
         icon : ICONS[now['weatherCode']][0]
-        desc : now['weatherDesc'][0]['value']
+        desc : (now['lang_' + LANG] || now['weatherDesc'])[0]['value']
         windspeed: now['windspeedKmph']
         winddir: getWind(now['winddir16Point'])
         pressure: now['pressure']
 
       getWind = (path) ->
-        return path
         if path.match /^[A-Z]{3}$/
           path.slice 1
         else if path.match /^[A-Z]b[A-Z]$/
@@ -50,7 +49,7 @@ App.controller 'WeatherController',
           date : day['date']
           max  : [day['tempMaxC'], day['tempMaxF']][+(options.temp is 'F')]
           min  : [day['tempMinC'], day['tempMinF']][+(options.temp is 'F')]
-          weather : day['weatherDesc'][0]['value']
+          weather : (day['lang_' + LANG] || day['weatherDesc'])[0]['value']
           precip : day['precipMM'] + 'mm'
           windspeed : day['windspeedKmph'] + 'km/h'
           icon : ICONS[day['weatherCode']][0]
